@@ -1,4 +1,6 @@
-import axios, { AxiosResponse } from 'axios';
+import axiod, {type IAxiodResponse} from "https://deno.land/x/axiod/mod.ts";
+import { logger } from './deps.ts';
+
 
 // Interface for the collection statistics
 interface CollectionStats {
@@ -13,19 +15,20 @@ interface CollectionStats {
  */
 export async function getCollectionStats(): Promise<number | string> {
   try {
-    const apiUrl = `https://api.opensea.io/collection/${process.env.COLLECTION_NAME}/stats`;
+    const apiUrl = `https://api.opensea.io/collection/${Deno.env.get("COLLECTION_NAME")}/stats`;
     const headers = {
       'Content-Type': 'application/json',
-      'X-API-KEY': process.env.OPENSEA_API_KEY,
+      'X-API-KEY': Deno.env.get("OPENSEA_API_KEY"),
     };
 
     // Send a GET request to the OpenSea API to fetch collection stats
-    const response: AxiosResponse<CollectionStats> = await axios.get(apiUrl, { headers });
+    const response: IAxiodResponse<CollectionStats> = await axiod.get(apiUrl, { headers });
 
     if (response.status === 200) {
       // Extract the floor price from the response data
       const floorPrice = response.data.stats.floor_price;
-      console.log('Floor price fetched successfully');
+      logger.info('Found floor price feteched successfully');
+      // console.log('Floor price fetched successfully');
       return floorPrice;
     }
 

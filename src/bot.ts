@@ -1,9 +1,9 @@
-import { Client, GatewayIntentBits, Partials } from 'discord.js';
-import dotenv from 'dotenv';
-import { getCollectionStats } from './collection';
-import { updateStatus } from './status';
+import { Client, GatewayIntentBits, Partials } from 'npm:discord.js@14.12.1';
+import { logger } from './deps.ts';
+import { getCollectionStats } from './collection.ts';
+import { updateStatus } from './status.ts';
 
-dotenv.config();
+
 
 /**
  * Represents the Discord bot.
@@ -20,8 +20,9 @@ export class Bot {
    */
   public async start() {
     try {
-      await this.client.login(process.env.DISCORD_BOT_TOKEN);
-      console.log('Logged in successfully');
+      console.log(Deno.env.get("DISCORD_BOT_TOKEN"));
+      await this.client.login(Deno.env.get("DISCORD_BOT_TOKEN"));
+      logger.info('Logged in successfully');
       updateStatus(this.client);
     } catch (error: any) {
       console.error('Error starting the bot:', error.message);

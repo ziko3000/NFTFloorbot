@@ -1,5 +1,8 @@
-import { Client, ActivityType } from 'discord.js';
-import { getCollectionStats } from './collection';
+import { Client, ActivityType } from 'npm:discord.js@14.12.1';
+import { getCollectionStats } from './collection.ts';
+import { logger } from './deps.ts';
+
+
 
 /**
  * Updates the bot's status on Discord with the collection floor price.
@@ -11,7 +14,7 @@ export async function updateStatus(client: Client) {
     const floorPrice = await getCollectionStats();
 
     // Get the activity message from environment variables
-    const activityMessage = process.env.ACTIVITY_MESSAGE;
+    const activityMessage = Deno.env.get("ACTIVITY_MESSAGE");
 
     if (!activityMessage) {
       console.error('ACTIVITY_MESSAGE is not defined in environment variables.');
@@ -32,7 +35,9 @@ export async function updateStatus(client: Client) {
       status: 'online'
     });
 
-    console.log('Status updated successfully');
+    // console.log('Status updated successfully');
+    logger.info('Status updated successfully');
+
 
     // Schedule the next status update after 4 seconds
     setTimeout(() => updateStatus(client), 4 * 1000);
