@@ -1,6 +1,6 @@
-import { Client, ActivityType } from 'npm:discord.js@14.12.1';
+import { Client, ActivityType } from 'discordjs';
 import { getCollectionStats } from './collection.ts';
-import { logger } from './deps.ts';
+import { logger } from '../deps.ts';
 
 
 

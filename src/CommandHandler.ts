@@ -1,6 +1,6 @@
-import { Client, SlashCommandBuilder, REST, Routes, CommandInteraction } from 'npm:discord.js@14.12.1';
+import { Client, SlashCommandBuilder, REST, Routes, CommandInteraction } from 'discordjs';
 import { HelpCommand } from './commands/help.ts';
-import { logger } from './deps.ts';
+import { logger } from '../deps.ts';
 
 
 

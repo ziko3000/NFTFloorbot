@@ -1,5 +1,5 @@
-import axiod, {type IAxiodResponse} from "https://deno.land/x/axiod/mod.ts";
-import { logger } from './deps.ts';
+import axiod, {type IAxiodResponse} from "axiod";
+import { logger } from '../deps.ts';
 
 
 // Interface for the collection statistics

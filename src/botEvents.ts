@@ -1,4 +1,4 @@
-import { Client, ActivityType, Interaction, CommandInteraction,PresenceData } from 'npm:discord.js@14.12.1';
+import { Client, ActivityType, Interaction, CommandInteraction,PresenceData } from 'discordjs';
 import { CommandHandler } from './CommandHandler.ts';
 
 export class BotEvents {

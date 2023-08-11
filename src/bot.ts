@@ -1,5 +1,5 @@
-import { Client, GatewayIntentBits, Partials } from 'npm:discord.js@14.12.1';
-import { logger } from './deps.ts';
+import { Client, GatewayIntentBits, Partials } from 'discordjs';
+import { logger } from '../deps.ts';
 import { getCollectionStats } from './collection.ts';
 import { updateStatus } from './status.ts';
 import { BotEvents } from './botEvents.ts';
@@ -26,7 +26,7 @@ export class Bot {
    */
   public async start() {
     try {
-      console.log(Deno.env.get("DISCORD_BOT_TOKEN"));
+
       await this.client.login(Deno.env.get("DISCORD_BOT_TOKEN"));
       logger.info('Logged in successfully');
       updateStatus(this.client);

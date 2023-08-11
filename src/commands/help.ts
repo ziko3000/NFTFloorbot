@@ -1,5 +1,5 @@
-import { CommandInteraction, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } from 'npm:discord.js@14.12.1';
-import { logger } from '../deps.ts';
+import { CommandInteraction, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } from 'discordjs';
+import { logger } from '../../deps.ts';
 
 
 /**
