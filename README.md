@@ -31,6 +31,7 @@ To run this bot, you'll need to have the following:
 - A Discord bot token, which you can obtain by creating a bot on the [Discord Developer Portal](https://discord.com/developers/applications)
 - OpenSea API key
 - Environment variables file (`.env`) to store your sensitive information
+- Deno
 
 ### Installation <a name = "installation"></a>
 
@@ -49,7 +50,7 @@ To run this bot, you'll need to have the following:
 3. Install the dependencies:
 
     ```bash
-    npm install
+    winget install --id DenoLand.Deno -e
     ```
 
 4. Create a `.env` file in the root of your project and add the following environment variables:
@@ -59,6 +60,7 @@ To run this bot, you'll need to have the following:
     OPENSEA_API_KEY=YourOpenSeaAPIKey
     COLLECTION_NAME=YourCollectionName
     ACTIVITY_MESSAGE=Floor Price: %collection_floor%
+    APPLICATION_ID= Discord Application Id
     ```
 
    Replace `YourDiscordBotToken`, `YourOpenSeaAPIKey`, and `YourCollectionName` with your actual values. The `ACTIVITY_MESSAGE` is the message that will be displayed in the bot's presence with the `%collection_floor%` placeholder representing the collection floor price.
@@ -66,7 +68,7 @@ To run this bot, you'll need to have the following:
 5. Start the bot:
 
     ```bash
-    npm start
+    deno task run_bot
     ```
 
 The bot will now be running and tracking the floor price of the specified OpenSea collection.
