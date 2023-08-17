@@ -5,7 +5,6 @@ import { logger } from '../../deps.ts';
 /**
  * HelpCommand class for providing help about the bot and its commands.
  */
-logger.info('hello world');
 export class HelpCommand {
   /**
    * Execute the help command.

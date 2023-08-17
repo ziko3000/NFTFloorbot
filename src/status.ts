@@ -40,8 +40,8 @@ export async function updateStatus(client: Client) {
 
 
     // Schedule the next status update after 4 seconds
-    setTimeout(() => updateStatus(client), 4 * 1000);
+    setTimeout(async () => await updateStatus(client), 4 * 1000);
   } catch (error: any) {
-    console.error('Error updating status:', error.message);
+    logger.error('Error updating status:', error);
   }
 }

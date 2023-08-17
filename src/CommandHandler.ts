@@ -31,7 +31,6 @@ export class CommandHandler {
     const commandBuilders = Array.from(this.commands.values()).map(
       ({ name, description }) => new SlashCommandBuilder().setName(name).setDescription(description).toJSON()
     );
-    console.log('DISCORD_BOT_TOKEN','COMMAND HANDLER')
     const rest = new REST({ version: '10' }).setToken(Deno.env.get("DISCORD_BOT_TOKEN"));
     await rest.put(
       Routes.applicationCommands(Deno.env.get("APPLICATION_ID")),
@@ -44,8 +43,7 @@ export class CommandHandler {
     if (command) {
       await command.execute(interaction);
     } else {
-      console.error(`Command not found: ${interaction.commandName}`);
-      logger.info(` LoggerCommand not found: ${interaction.commandName}`);
+      logger.error(`Command not found: ${interaction.commandName}`);
     }
   }
 }
