@@ -15,7 +15,7 @@ interface CollectionStats {
  */
 export async function getCollectionStats(): Promise<number | string> {
   try {
-    const apiUrl = `https://api.opensea.io/collection/${Deno.env.get("COLLECTION_NAME")}/stats`;
+    const apiUrl = `https://api.opensea.io/api/v1/collection/${Deno.env.get("COLLECTION_NAME")}/stats`;
     const headers = {
       'Content-Type': 'application/json',
       'X-API-KEY': Deno.env.get("OPENSEA_API_KEY"),
@@ -27,14 +27,14 @@ export async function getCollectionStats(): Promise<number | string> {
     if (response.status === 200) {
       // Extract the floor price from the response data
       const floorPrice = response.data.stats.floor_price;
-      logger.info('Found floor price feteched successfully');
+      logger.info(`Found floor price feteched successfully: ${floorPrice}`);
       // console.log('Floor price fetched successfully');
       return floorPrice;
     }
 
     return "Couldn't fetch the floor price.";
   } catch (error: any) {
-    console.error('Error fetching the collection stats:', error.message);
+    logger.error('Error fetching the collection stats:', error);
     return "Couldn't fetch the floor price.";
   }
 }
