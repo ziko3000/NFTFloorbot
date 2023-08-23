@@ -1,11 +1,14 @@
-import { load } from "https://deno.land/std@0.196.0/dotenv/mod.ts";
+import { Logger } from 'logger';
+const logger = new Logger();
+export { logger };
+
+
+import { load } from 'dotenv';
+logger.info(load);
 const loadEnv = await load({
-  envPath: "./.env",
+  envPath: './.env',
   export: true,
-  examplePath: "./.env.example",
+  examplePath: './.env.example',
   allowEmptyValues: false,
 });
 
-import { Logger } from "https://deno.land/x/logger@v1.1.2/mod.ts";
-const logger = new Logger();
-export { logger };

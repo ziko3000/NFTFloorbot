@@ -39,9 +39,9 @@ export async function updateStatus(client: Client) {
     logger.info('Status updated successfully');
 
 
-    // Schedule the next status update after 4 seconds
-    setTimeout(async () => await updateStatus(client), 4 * 1000);
-  } catch (error: any) {
+    // Schedule the next status update after 30 seconds
+    setTimeout(async () => await updateStatus(client), 30 * 1000);
+  } catch (error) {
     logger.error('Error updating status:', error);
   }
 }

@@ -27,7 +27,7 @@ export class Bot {
   public async start() {
     try {
 
-      await this.client.login(Deno.env.get("DISCORD_BOT_TOKEN"));
+      await this.client.login(Deno.env.get('DISCORD_BOT_TOKEN'));
       logger.info('Logged in successfully');
       updateStatus(this.client);
     } catch (error: any) {

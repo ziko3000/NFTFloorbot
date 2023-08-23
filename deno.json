@@ -3,10 +3,12 @@
     "/": "./",
     "./": "./",
 
-    "axiod": "https://deno.land/x/axiod@0.26.2/mod.ts",
-    "discordjs": "npm:discord.js@14.12.1"
+    "axiod":     "https://deno.land/x/axiod@0.26.2/mod.ts",
+    "discordjs": "npm:discord.js@14.12.1",
+    "logger":    "https://deno.land/x/logger@v1.1.2/mod.ts",
+    "dotenv":    "https://deno.land/std@0.199.0/dotenv/mod.ts"
   },
-    "tasks": {
-      "run_bot": "deno run --allow-env --allow-net --allow-read ./src/index.ts"
-    }
+  "tasks": {
+    "run_bot": "denon run --allow-env --allow-net --allow-read ./src/index.ts"
   }
+}
