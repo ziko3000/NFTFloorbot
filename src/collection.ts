@@ -28,7 +28,6 @@ export async function getCollectionStats(): Promise<number | string> {
       // Extract the floor price from the response data
       const floorPrice = response.data.stats.floor_price;
       logger.info(`Found floor price feteched successfully: ${floorPrice}`);
-      // console.log('Floor price fetched successfully');
       return floorPrice;
     }
 
