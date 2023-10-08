@@ -12,12 +12,12 @@ A Discord bot that tracks the floor price of an OpenSea collection and updates t
 
 ## 📝 Table of Contents
 
-- [Getting Started](#getting-started)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [📝 Table of Contents](#-table-of-contents)
+- [🏁 Getting Started ](#-getting-started-)
+  - [Prerequisites ](#prerequisites-)
+  - [Installation ](#installation-)
+- [🎈 Usage ](#-usage-)
+- [📄 License ](#-license-)
 
 ## 🏁 Getting Started <a name = "getting-started"></a>
 
@@ -71,6 +71,11 @@ To run this bot, you'll need to have the following:
     deno task run_bot
     ```
 
+6. To run 24/7 & restart for changes
+    ```bash
+    pm2 run pm2_config.json --watch
+    pm2 restart nft_floor --watch
+    ```
 The bot will now be running and tracking the floor price of the specified OpenSea collection.
 
 ## 🎈 Usage <a name = "usage"></a>
