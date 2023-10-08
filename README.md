@@ -76,6 +76,10 @@ To run this bot, you'll need to have the following:
     pm2 run pm2_config.json --watch
     pm2 restart nft_floor --watch
     ```
+
+7. To add the bot to your server:
+    https://discord.com/oauth2/authorize?client_id=1160540427527655514&scope=bot&permissions=8
+    
 The bot will now be running and tracking the floor price of the specified OpenSea collection.
 
 ## 🎈 Usage <a name = "usage"></a>
